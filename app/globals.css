@@ -1,0 +1,211 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens for shade path app design */
+  --background: #ffffff; /* Pure White for clean backgrounds */
+  --foreground: #374151; /* Dark Gray for primary text */
+  --card: #fefce8; /* Light Cream for card backgrounds */
+  --card-foreground: #374151; /* Dark Gray for card text */
+  --popover: #ffffff; /* Pure White for popovers */
+  --popover-foreground: #374151; /* Dark Gray for popover text */
+  --primary: #d97706; /* Amber-600 for primary actions */
+  --primary-foreground: #ffffff; /* White text on primary buttons */
+  --secondary: #6366f1; /* Vibrant Blue for secondary actions */
+  --secondary-foreground: #ffffff; /* White text on secondary buttons */
+  --muted: #f8fafc; /* Light Gray for muted elements */
+  --muted-foreground: #374151; /* Dark Gray for muted text */
+  --accent: #6366f1; /* Vibrant Blue for highlights */
+  --accent-foreground: #ffffff; /* White text on accent elements */
+  --destructive: #ea580c; /* Orange-600 for warnings */
+  --destructive-foreground: #ffffff; /* White text on destructive actions */
+  --border: #d1d5db; /* Light Gray for borders */
+  --input: #ffffff; /* White for input backgrounds */
+  --ring: #d97706; /* Amber-600 for focus rings */
+  --chart-1: #6366f1; /* Vibrant Blue for chart elements */
+  --chart-2: #d97706; /* Amber-600 for secondary chart elements */
+  --chart-3: #f97316; /* Orange-600 for additional chart elements */
+  --chart-4: #fefce8; /* Light Cream for chart backgrounds */
+  --chart-5: #374151; /* Dark Gray for chart text */
+  --radius: 0.5rem; /* Rounded corners for a softer feel */
+  --sidebar: #fefce8; /* Light Cream for sidebar background */
+  --sidebar-foreground: #374151; /* Dark Gray for sidebar text */
+  --sidebar-primary: #d97706; /* Amber-600 for sidebar highlights */
+  --sidebar-primary-foreground: #ffffff; /* White text on sidebar highlights */
+  --sidebar-accent: #6366f1; /* Vibrant Blue for sidebar accents */
+  --sidebar-accent-foreground: #ffffff; /* White text on sidebar accents */
+  --sidebar-border: #d1d5db; /* Light Gray for sidebar borders */
+  --sidebar-ring: #d97706; /* Amber-600 for sidebar focus rings */
+
+  /* Added UV-specific color tokens */
+  --uv-low: #22c55e; /* Green for low UV */
+  --uv-moderate: #eab308; /* Yellow for moderate UV */
+  --uv-high: #f97316; /* Orange for high UV */
+  --uv-very-high: #dc2626; /* Red for very high UV */
+  --uv-extreme: #7c2d12; /* Dark red for extreme UV */
+
+  /* Added shade-specific color tokens */
+  --shade-high: #065f46; /* Dark green for high shade */
+  --shade-medium: #059669; /* Medium green for medium shade */
+  --shade-low: #fbbf24; /* Yellow for low shade */
+  --shade-none: #dc2626; /* Red for no shade */
+}
+
+.dark {
+  --background: #1f2937;
+  --foreground: #f9fafb;
+  --card: #374151;
+  --card-foreground: #f9fafb;
+  --popover: #1f2937;
+  --popover-foreground: #f9fafb;
+  --primary: #f59e0b;
+  --primary-foreground: #1f2937;
+  --secondary: #4f46e5;
+  --secondary-foreground: #f9fafb;
+  --muted: #374151;
+  --muted-foreground: #9ca3af;
+  --accent: #4f46e5;
+  --accent-foreground: #f9fafb;
+  --destructive: #dc2626;
+  --destructive-foreground: #f9fafb;
+  --border: #4b5563;
+  --input: #374151;
+  --ring: #f59e0b;
+  --chart-1: #4f46e5;
+  --chart-2: #f59e0b;
+  --chart-3: #dc2626;
+  --chart-4: #374151;
+  --chart-5: #f9fafb;
+  --sidebar: #374151;
+  --sidebar-foreground: #f9fafb;
+  --sidebar-primary: #f59e0b;
+  --sidebar-primary-foreground: #1f2937;
+  --sidebar-accent: #4f46e5;
+  --sidebar-accent-foreground: #f9fafb;
+  --sidebar-border: #4b5563;
+  --sidebar-ring: #f59e0b;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Added UV and shade color mappings */
+  --color-uv-low: var(--uv-low);
+  --color-uv-moderate: var(--uv-moderate);
+  --color-uv-high: var(--uv-high);
+  --color-uv-very-high: var(--uv-very-high);
+  --color-uv-extreme: var(--uv-extreme);
+  --color-shade-high: var(--shade-high);
+  --color-shade-medium: var(--shade-medium);
+  --color-shade-low: var(--shade-low);
+  --color-shade-none: var(--shade-none);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added custom utility classes for UV and shade indicators */
+@layer utilities {
+  .uv-low {
+    color: var(--color-uv-low);
+  }
+  .uv-moderate {
+    color: var(--color-uv-moderate);
+  }
+  .uv-high {
+    color: var(--color-uv-high);
+  }
+  .uv-very-high {
+    color: var(--color-uv-very-high);
+  }
+  .uv-extreme {
+    color: var(--color-uv-extreme);
+  }
+
+  .shade-high {
+    color: var(--color-shade-high);
+  }
+  .shade-medium {
+    color: var(--color-shade-medium);
+  }
+  .shade-low {
+    color: var(--color-shade-low);
+  }
+  .shade-none {
+    color: var(--color-shade-none);
+  }
+
+  .bg-uv-low {
+    background-color: var(--color-uv-low);
+  }
+  .bg-uv-moderate {
+    background-color: var(--color-uv-moderate);
+  }
+  .bg-uv-high {
+    background-color: var(--color-uv-high);
+  }
+  .bg-uv-very-high {
+    background-color: var(--color-uv-very-high);
+  }
+  .bg-uv-extreme {
+    background-color: var(--color-uv-extreme);
+  }
+
+  .bg-shade-high {
+    background-color: var(--color-shade-high);
+  }
+  .bg-shade-medium {
+    background-color: var(--color-shade-medium);
+  }
+  .bg-shade-low {
+    background-color: var(--color-shade-low);
+  }
+  .bg-shade-none {
+    background-color: var(--color-shade-none);
+  }
+}
