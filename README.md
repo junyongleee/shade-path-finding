@@ -1,4 +1,4 @@
-# Shade path finding
+# 그늘길
 
 *Automatically synced with your [v0.app](https://v0.app) deployments*
 
